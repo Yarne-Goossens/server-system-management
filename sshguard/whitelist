@@ -1,6 +1,6 @@
 # To see more examples, please see
 # /usr/share/doc/sshguard/examples/whitelistfile.example
-# Home
+# Ip address of home
 81.246.190.239
 
 # Yoda ip addresses
