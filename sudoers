@@ -42,6 +42,8 @@ Defaults	use_pty
 
 # User privilege specification
 root	ALL=(ALL:ALL) ALL
+check ALL=(root) NOPASSWD: /usr/lib/nagios/plugins/check_apt
+check ALL=(root) NOPASSWD: /usr/sbin/arp
 
 # Members of the admin group may gain root privileges
 %admin ALL=(ALL) ALL
