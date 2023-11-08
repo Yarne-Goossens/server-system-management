@@ -11,3 +11,7 @@ IPv6AcceptRA = false
 [Route]
 Destination = 193.191.176.254/32
 Scope = link
+
+[Neighbor]
+Address=193.191.176.254
+LinkLayerAddress=ca:fe:c0:ff:ee:00
