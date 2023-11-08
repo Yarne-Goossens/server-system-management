@@ -1,2 +1,4 @@
 /yoda/*
 incron.d/etc.conf
+ld.so.cache
+
