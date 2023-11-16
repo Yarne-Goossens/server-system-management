@@ -6,10 +6,10 @@ $TTL    300
                             300         ; Expire
                             300 )       ; Negative Cache TTL
 ;
-@       IN      NS      ns.yarne-goossens.sasm.uclllabs.be
-@       IN      NS      ns1.uclllabs.be
-@       IN      NS      ns2.uclllabs.be
-@       IN      NS      ns.otherstudent.sasm.uclllabs.be
+@       IN      NS      ns.yarne-goossens.sasm.uclllabs.be.
+@       IN      NS      ns1.uclllabs.be.
+@       IN      NS      ns2.uclllabs.be.
+#@       IN      NS      ns.otherstudent.sasm.uclllabs.be
 
 @       IN      A       193.191.176.67
 www     IN      A       193.191.176.67
