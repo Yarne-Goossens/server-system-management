@@ -6,3 +6,7 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+zone "yarne-goossens.sasm.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.yarne-goossens.sasm.uclllabs.be";
+};
