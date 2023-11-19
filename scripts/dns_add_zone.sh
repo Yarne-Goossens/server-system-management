@@ -33,3 +33,9 @@ echo "$ns_record"
 echo "$dns_config"
 echo "$zone_config"
 
+bash -c "echo -e '$zone_config' >> /etc/bind/zones/db.'$subzone'.yarne-goossens.sasm.uclllabs.be"
+chown bind:bind "/etc/bind/zones/db.'$subzone'.yarne-goossens.sasm.uclllabs.be"
+
+bash -c "echo -e '$dns_config' >> /etc/bind/named.conf.yoda-zones"
+
+echo "done"
