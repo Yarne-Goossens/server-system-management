@@ -15,6 +15,7 @@ zone_config='$TTL    300
                             300         ; Expire
                             300 )       ; Negative Cache TTL
 ;
+@       IN      NS      ns.'$subzone'.yarne-goossens.sasm.uclllabs.be.
 @       IN      NS      ns.yarne-goossens.sasm.uclllabs.be.
 
 @       IN      A       193.191.176.67
