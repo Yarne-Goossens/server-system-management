@@ -6,6 +6,8 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+include "/etc/bind/named.conf.yoda-zones";
+
 zone "yarne-goossens.sasm.uclllabs.be" {
     type master;
     file "/etc/bind/zones/db.yarne-goossens.sasm.uclllabs.be";
