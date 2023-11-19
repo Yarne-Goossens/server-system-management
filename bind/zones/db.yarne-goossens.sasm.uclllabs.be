@@ -1,6 +1,6 @@
 $TTL    300
-@       IN      SOA     ns.yarne-goossens.sasm.uclllabs.be. admin.yarne-goossens.sasm.ucllabs.be. (
-                     2023111602         ; Serial
+@       IN      SOA     ns.yarne-goossens.sasm.uclllabs.be. admin.yarne-goossens.sasm.uclllabs.be. (
+                     2023111801         ; Serial
                             300         ; Refresh
                             300         ; Retry
                             300         ; Expire
