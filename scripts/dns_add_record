@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while getopts ":t:" opt; do
+    case ${opt} in
+        t )
+            type="$OPTARG"
+            ;;
+        \? )
+            type="A"
+            ;;
+    esac
+done
+
+echo "$type"
