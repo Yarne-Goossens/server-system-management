@@ -2,3 +2,4 @@
 incron.d/etc.conf
 ld.so.cache
 /bind/named.conf.yoda-zones
+/bind/zones/*
