@@ -1,14 +1,26 @@
 #!/bin/bash
 
-while getopts ":t:" opt; do
-    case ${opt} in
-        t )
+type="A"
+
+type_check() {
+  if [ "$type" != "A" ] && [ "$type" != "MX" ] && [ "$type" != "CNAME" ]; then
+    echo "Enter a valid record (A,CNAME,MX)"
+    exit 1
+  fi
+}
+
+while getopts "t:" opt; do
+    case $opt in
+        t)
             type="$OPTARG"
+            type_check
             ;;
-        \? )
-            type="A"
+        *)
+            echo "Enter a valid record (A,CNAME,MX)"
+            exit 1
             ;;
     esac
 done
 
 echo "$type"
+
