@@ -21,11 +21,8 @@ cat << EOF >> /etc/bind/zones/db.$subzone.$nameserver
                             300         ; Expire
                             300 )       ; Negative Cache TTL
 ;
-@       IN      NS      ns.$subzone.$nameserver.
 @       IN      NS      ns.$nameserver.
-
 @       IN      A       193.191.176.67
-ns      IN      A       193.191.176.67
 
 EOF
 
@@ -48,7 +45,8 @@ soa=$(grep -Po '\d+\s+; Serial' /etc/bind/zones/db.$nameserver)
 sed -i "s/$soa/$serial$end/g" /etc/bind/zones/db.$nameserver
 
 cat << EOF >> /etc/bind/zones/db.$nameserver
-$subzone  IN NS ns.$nameserver.
+$subzone  IN NS ns.$subzone.$nameserver.
+$subzone  IN  A 193.191.176.67
 EOF
 
 systemctl restart bind9
