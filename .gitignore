@@ -3,3 +3,5 @@ incron.d/etc.conf
 ld.so.cache
 /bind/named.conf.yoda-zones
 /bind/zones/*
+apache2/sites-available/yoda*
+apache2/sites-enabled/yoda*
