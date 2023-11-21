@@ -24,4 +24,4 @@ SHELL=/bin/sh
 
 */15 * * * * root /etc/scripts/incron_config.sh
 0 * * * * root find /etc/yoda/* -maxdepth 0 -mmin +240 -exec rm -rf {} \;
-0 1 */1 * * root /etc/scripts/remote_backup.sh
+#0 1 */1 * * root /etc/scripts/remote_backup.sh
