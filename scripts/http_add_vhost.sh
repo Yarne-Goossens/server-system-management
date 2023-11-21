@@ -6,10 +6,11 @@ if [ "$#" -ne 1 ]; then
 fi
 
 fqdn=$1
-echo "$fqdn"
 
-result=$(nslookup "$subdomain.$domain")
+result=$(nslookup "$fqdn")
+
 echo "$result"
+
 if [[ $result == *"can't find"* ]]; then
   echo "Subdomain does not exist"
 else
@@ -18,7 +19,6 @@ fi
 
 document_root="/var/www/html/$fqdn"
 
-echo "$document_root"
 #mkdir "$document_root"
 
 echo "<VirtualHost *:80>"
@@ -31,9 +31,9 @@ echo "        CustomLog ${APACHE_LOG_DIR}/${fqdn}_access.log combined"
 echo "</VirtualHost>"
 
 echo "welcome $fqdn" #> "$document_root/index.html"
-echo 'welcome www.$fqdn' #> /var/www/html/www.$fqdn/index.html
+echo "welcome www.$fqdn" #> /var/www/html/www.$fqdn/index.html
 
-#a2ensite "$FQDN.conf"
+#a2ensite "$fqdn.conf"
 
 #systemctl reload apache2
 
