@@ -2,15 +2,12 @@
 
 subzone=$1
 nameserver="yarne-goossens.sasm.uclllabs.be"
-ns_record="ns.$subzone.$nameserver"
-
 
 if [ -z "$1" ]
 then
   echo "No argument supplied"
   exit 1
 fi
-
 
 cat << EOF >> /etc/bind/zones/db.$subzone.$nameserver
 \$TTL    300
@@ -23,6 +20,7 @@ cat << EOF >> /etc/bind/zones/db.$subzone.$nameserver
 ;
 @       IN      NS      ns.$nameserver.
 @       IN      A       193.191.176.67
+ns      IN      A       193.191.176.67
 
 EOF
 
@@ -45,11 +43,9 @@ soa=$(grep -Po '\d+\s+; Serial' /etc/bind/zones/db.$nameserver)
 sed -i "s/$soa/$serial$end/g" /etc/bind/zones/db.$nameserver
 
 cat << EOF >> /etc/bind/zones/db.$nameserver
-@  IN NS ns.$subzone.$nameserver.
-ns.$subzone  IN  A 193.191.176.67
+$subzone  IN NS ns.$nameserver.
 EOF
 
 systemctl restart bind9
 
 echo "Done"
-
