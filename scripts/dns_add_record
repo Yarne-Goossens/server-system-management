@@ -34,25 +34,24 @@ if [ "$type" == "A" ]; then
       echo "Needs 4 arguments"
       exit 1
     fi
-    echo "$name"
-    echo "$ip_or_alias"
-    echo "$domain"
+    echo "/etc/bind/zones/db.$domain"
+    echo "$name IN A $ip_or_alias"
 elif [ "$type" == "MX" ]; then
     echo "Adding MX record and A record"
     if [ "$#" -ne 3 ]; then
       echo "Needs 4 arguments"
       exit 1
     fi
-    echo "$name"
-    echo "$ip_or_alias"
-    echo "$domain"
+    echo "/etc/bind/zones/db.$domain"
+    echo "IN     MX     10  $name.$domain."
+    echo "$name IN A $ip_or_alias"
 elif [ "$type" == "CNAME" ]; then
     echo "Adding CNAME record"
     if [ "$#" -ne 2 ]; then
       echo "Needs 3 arguments"
       exit 1
     fi
-    echo "$name"
-    echo "$ip_or_alias"
-    echo "$domain"
+    domain="${ip_or_alias#*.}"
+    echo "/etc/bind/zones/db.$domain"
+    echo "$name IN CNAME $ip_or_alias"
 fi
