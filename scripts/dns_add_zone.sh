@@ -45,8 +45,8 @@ soa=$(grep -Po '\d+\s+; Serial' /etc/bind/zones/db.$nameserver)
 sed -i "s/$soa/$serial$end/g" /etc/bind/zones/db.$nameserver
 
 cat << EOF >> /etc/bind/zones/db.$nameserver
-$subzone  IN NS ns.$subzone.$nameserver.
-$subzone  IN  A 193.191.176.67
+@  IN NS ns.$subzone.$nameserver.
+ns.$subzone  IN  A 193.191.176.67
 EOF
 
 systemctl restart bind9
