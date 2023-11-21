@@ -21,3 +21,11 @@ echo "        ServerAlias www.$fqdn"
 echo "        ErrorLog ${APACHE_LOG_DIR}/${fqdn}_error.log"
 echo "        CustomLog ${APACHE_LOG_DIR}/${fqdn}_access.log combined"
 echo "</VirtualHost>"
+
+echo "welcome $fqdn" #> "$document_root/index.html"
+echo "welcome www.$fqdn" #> /var/www/html/www.$fqdn/index.html
+
+#a2ensite "$FQDN.conf"
+
+#systemctl reload apache2
+
