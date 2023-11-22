@@ -48,8 +48,8 @@ virtual_mailbox_domains = /etc/postfix/virtual_mailbox_domains
 
 myhostname = mx.yarne-goossens.sasm.uclllabs.be
 
-myorigin = /etc/mailname
-
+#myorigin = /etc/mailname
+mydomain = yarne-goossens.sasm.uclllabs.be
 mydestination =  localhost.$mydomain, localhost
 
 relayhost = 
