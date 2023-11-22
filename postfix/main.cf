@@ -21,3 +21,6 @@ compatibility_level = 2
 
 smtpd_relay_restrictions = permit_mynetworks, reject_unauth_destination
 mynetworks = 127.0.0.0/8, 192.168.0.0/16
+
+myhostname = mx.yarne-goossens.sasm.uclllabs.be
+mydomain = yarne-goossens.sasm.uclllabs.be
