@@ -26,3 +26,4 @@ myhostname = mx.yarne-goossens.sasm.uclllabs.be
 mydomain = yarne-goossens.sasm.uclllabs.be
 
 virtual_alias_maps = hash:/etc/postfix/virtual
+virtual_transport = lmtp:unix:private/dovecot-lmtp
