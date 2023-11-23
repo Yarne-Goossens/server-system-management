@@ -62,10 +62,10 @@ elif [ "$type" == "CNAME" ]; then
     echo -e "$name IN CNAME $ip_or_alias" >> /etc/bind/zones/db.$domain
 fi
 
-serial=$(grep -Po '\d+(?=\s+; Serial)' /etc/bind/zones/db.$domain)
+serial=$(grep -Po '\d+(?=\s+; serial)' /etc/bind/zones/db.$domain)
 new_serial=$(("$serial"+1))
-end=$(grep -Po '\s+; Serial' /etc/bind/zones/db.$domain)
-soa=$(grep -Po '\d+\s+; Serial' /etc/bind/zones/db.$domain)
+end=$(grep -Po '\s+; serial' /etc/bind/zones/db.$domain)
+soa=$(grep -Po '\d+\s+; serial' /etc/bind/zones/db.$domain)
 
 sed -i "s/$soa/$new_serial$end/g" /etc/bind/zones/db.$domain
 

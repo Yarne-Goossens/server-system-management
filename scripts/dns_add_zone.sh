@@ -12,11 +12,11 @@ fi
 cat << EOF >> /etc/bind/zones/db.$subzone.$nameserver
 \$TTL    300
 @       IN      SOA     ns.$subzone.$nameserver. admin.$nameserver. (
-                              1         ; Serial
-                            300         ; Refresh
-                            300         ; Retry
-                            300         ; Expire
-                            300 )       ; Negative Cache TTL
+                              1         ; serial
+                            300         ; refresh
+                            300         ; retry
+                            300         ; expire
+                            300 )       ; negative Cache TTL
 ;
 @       IN      NS      ns.$nameserver.
 @       IN      A       193.191.176.67
@@ -35,10 +35,10 @@ EOF
 
 echo "Zone added to named.conf.yoda-zones"
 
-serial=$(grep -Po '\d+(?=\s+; Serial)' /etc/bind/zones/db.$nameserver)
+serial=$(grep -Po '\d+(?=\s+; serial)' /etc/bind/zones/db.$nameserver)
 new_serial=$(("$serial"+1))
-end=$(grep -Po '\s+; Serial' /etc/bind/zones/db.$nameserver)
-soa=$(grep -Po '\d+\s+; Serial' /etc/bind/zones/db.$nameserver)
+end=$(grep -Po '\s+; serial' /etc/bind/zones/db.$nameserver)
+soa=$(grep -Po '\d+\s+; serial' /etc/bind/zones/db.$nameserver)
 
 sed -i "s/$soa/$new_serial$end/g" /etc/bind/zones/db.$nameserver
 
