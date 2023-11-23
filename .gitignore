@@ -5,3 +5,4 @@ ld.so.cache
 /bind/zones/*
 apache2/sites-available/yoda*
 apache2/sites-enabled/yoda*
+pki/*
