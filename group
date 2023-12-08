@@ -62,3 +62,4 @@ mysql:x:121:
 dovecot:x:122:
 dovenull:x:123:
 vmail:x:5000:
+ftp:x:124:
