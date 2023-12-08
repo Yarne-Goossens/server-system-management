@@ -7,6 +7,8 @@ Address = 193.191.176.67/25
 Gateway = 193.191.176.254
 DHCP = no
 IPv6AcceptRA = false
+Address=2001:6a8:2880:a020::43/64
+Gateway=2001:6a8:2880:a020::fe
 
 [Route]
 Destination = 193.191.176.254/32
