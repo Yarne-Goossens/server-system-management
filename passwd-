@@ -33,4 +33,4 @@ mysql:x:112:121:MySQL Server,,,:/nonexistent:/bin/false
 dovecot:x:113:122:Dovecot mail server,,,:/usr/lib/dovecot:/usr/sbin/nologin
 dovenull:x:114:123:Dovecot login user,,,:/nonexistent:/usr/sbin/nologin
 vmail:x:150:8:Virtual Mail User:/var/vmail:/sbin/nologin
-ftp:x:115:124::/srv/ftp:/usr/sbin/nologin
+ftp:x:115:124:ftp daemon,,,:/srv/ftp:/usr/sbin/nologin
