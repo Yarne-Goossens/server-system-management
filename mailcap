@@ -36,6 +36,23 @@ text/troff; /usr/bin/nroff -mandoc -Tutf8; copiousoutput; print=/usr/bin/nroff -
 application/x-info; /usr/bin/info -f %s; needsterminal; description=GNU Info document
 application/mbox; mutt -Rf %s; edit=mutt -f %s; needsterminal
 text/plain; more %s; needsterminal
+application/vnd.tcpdump.pcap; wireshark %s; test=test -n "$DISPLAY"
+application/x-pcapng; wireshark %s; test=test -n "$DISPLAY"
+application/x-snoop; wireshark %s; test=test -n "$DISPLAY"
+application/x-iptrace; wireshark %s; test=test -n "$DISPLAY"
+application/x-lanalyzer; wireshark %s; test=test -n "$DISPLAY"
+application/x-nettl; wireshark %s; test=test -n "$DISPLAY"
+application/x-radcom; wireshark %s; test=test -n "$DISPLAY"
+application/x-etherpeek; wireshark %s; test=test -n "$DISPLAY"
+application/x-visualnetworks; wireshark %s; test=test -n "$DISPLAY"
+application/x-netinstobserver; wireshark %s; test=test -n "$DISPLAY"
+application/x-5view; wireshark %s; test=test -n "$DISPLAY"
+application/x-tektronix-rf5; wireshark %s; test=test -n "$DISPLAY"
+application/x-micropross-mplog; wireshark %s; test=test -n "$DISPLAY"
+application/x-apple-packetlogger; wireshark %s; test=test -n "$DISPLAY"
+application/x-endace-erf; wireshark %s; test=test -n "$DISPLAY"
+application/ipfix; wireshark %s; test=test -n "$DISPLAY"
+application/x-ixia-vwr; wireshark %s; test=test -n "$DISPLAY"
 text/english; vim %s; needsterminal
 text/plain; vim %s; needsterminal
 text/x-makefile; vim %s; needsterminal
