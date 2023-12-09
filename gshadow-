@@ -28,7 +28,7 @@ list:*::
 irc:*::
 src:*::
 gnats:*::
-shadow:*::
+shadow:*::freerad
 utmp:*::
 video:*::
 sasl:*::
@@ -63,3 +63,5 @@ dovecot:!::
 dovenull:!::
 vmail:!::
 ftp:!::
+mystery1_2014:!::
+freerad:!::
