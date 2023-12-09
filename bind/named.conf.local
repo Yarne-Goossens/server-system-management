@@ -15,8 +15,8 @@ zone "yarne-goossens.sasm.uclllabs.be" {
     allow-update { key "acme"; };
 };
 
-zone "sander-debroyer.sasm.uclllabs.be" {
-    type slave;
-    file "/etc/bind/zones/db.sander-debroyer.sasm.uclllabs.be";
-    masters { 193.191.176.45; };
-};
+#zone "sander-debroyer.sasm.uclllabs.be" {
+#    type slave;
+#    file "/etc/bind/zones/db.sander-debroyer.sasm.uclllabs.be";
+#    masters { 193.191.176.45; };
+#};
