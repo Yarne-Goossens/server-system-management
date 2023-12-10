@@ -40,7 +40,7 @@ nogroup:*::
 crontab:!::
 messagebus:!::
 syslog:!::
-ssl-cert:!::
+ssl-cert:!::freerad
 input:!::
 sgx:!::
 kvm:!::

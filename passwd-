@@ -36,3 +36,4 @@ vmail:x:150:8:Virtual Mail User:/var/vmail:/sbin/nologin
 ftp:x:115:124:ftp daemon,,,:/srv/ftp:/usr/sbin/nologin
 mystery1_2014:x:1001:1001::/home/mystery1_2014:/bin/sh
 freerad:x:116:125::/etc/freeradius:/usr/sbin/nologin
+dnsmasq:x:117:65534::/var/lib/misc:/usr/sbin/nologin
