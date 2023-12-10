@@ -484,6 +484,12 @@ authorize {
 	Autz-Type New-TLS-Connection {
 		  ok
 	}
+
+	if ("%{User-Name}" == "check") {
+		update control {
+			Tmp-String-0 = "%{debug:2}"
+		}
+	}
 }
 
 
