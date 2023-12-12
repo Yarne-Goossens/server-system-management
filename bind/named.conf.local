@@ -13,6 +13,9 @@ zone "yarne-goossens.sasm.uclllabs.be" {
     type master;
     file "/etc/bind/zones/db.yarne-goossens.sasm.uclllabs.be";
     allow-update { key "acme"; };
+    dnssec-policy default;
+    inline-signing yes;
+    key-directory "/etc/bind/keys";
 };
 
 #zone "sander-debroyer.sasm.uclllabs.be" {
