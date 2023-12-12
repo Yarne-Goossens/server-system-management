@@ -19,6 +19,8 @@ profile named /usr/sbin/named flags=(attach_disconnected) {
   /etc/bind/** r,
   /etc/bind/zones/ rw,
   /etc/bind/zones/** rw,
+  /etc/bind/keys/ rw,
+  /etc/bind/keys/** rw,
   /var/lib/bind/** rw,
   /var/lib/bind/ rw,
   /var/cache/bind/** lrw,
