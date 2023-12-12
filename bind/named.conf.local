@@ -11,11 +11,8 @@ include "/etc/bind/keys/acme.key";
 
 zone "yarne-goossens.sasm.uclllabs.be" {
     type master;
-    file "/etc/bind/zones/db.yarne-goossens.sasm.uclllabs.be";
+    file "/etc/bind/zones/db.yarne-goossens.sasm.uclllabs.be.signed";
     allow-update { key "acme"; };
-    dnssec-policy default;
-    inline-signing yes;
-    key-directory "/etc/bind/keys";
 };
 
 #zone "sander-debroyer.sasm.uclllabs.be" {
