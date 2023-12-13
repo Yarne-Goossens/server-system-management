@@ -22,6 +22,14 @@ case "$1" in
 	# Allow ping from any host
 	iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 
+	# Allow all traffic from specified addresses
+	iptables -A INPUT -s 10.0.0.0/8 -j ACCEPT
+	iptables -A INPUT -s 192.168.255.0/24 -j ACCEPT
+	iptables -A INPUT -s 172.16.0.0/16 -j ACCEPT
+
+	iptables -A INPUT -s 193.191.177.12 -j ACCEPT
+	iptables -A INPUT -s 193.191.177.1 -j ACCEPT
+
 	echo "Started"
         ;;
     stop)
