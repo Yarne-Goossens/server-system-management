@@ -30,6 +30,9 @@ case "$1" in
 	iptables -A INPUT -s 193.191.177.12 -j ACCEPT
 	iptables -A INPUT -s 193.191.177.1 -j ACCEPT
 
+	#Drop other traffic
+	iptables -A INPUT -j DROP
+
 	echo "Started"
         ;;
     stop)
