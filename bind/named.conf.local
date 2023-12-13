@@ -11,7 +11,7 @@ include "/etc/bind/keys/acme.key";
 
 zone "yarne-goossens.sasm.uclllabs.be" {
     type master;
-    file "/etc/bind/zones/db.yarne-goossens.sasm.uclllabs.be.signed";
+    file "/etc/bind/zones/db.yarne-goossens.sasm.uclllabs.be";
     allow-update { key "acme"; };
 };
 
