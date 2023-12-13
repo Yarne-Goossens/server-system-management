@@ -4,41 +4,19 @@ case "$1" in
     start)
 	echo "Starting"
 
-	#Allow traffic originating from machine
-	ip6tables -A OUTPUT -j ACCEPT
-
-	#Allowing specified tcp ports to be accessed everywhere
-	ip6tables -A INPUT -p tcp --dport 25 -j ACCEPT
-	ip6tables -A INPUT -p tcp --dport 80 -j ACCEPT
-	ip6tables -A INPUT -p tcp --dport 443 -j ACCEPT
-	ip6tables -A INPUT -p tcp --dport 587 -j ACCEPT
-	ip6tables -A INPUT -p tcp --dport 993 -j ACCEPT
-	ip6tables -A INPUT -p tcp --dport 22345 -j ACCEPT
-
-	# Allow incoming UDP and TCP traffic on port 53
-	ip6tables -A INPUT -p udp --dport 53 -j ACCEPT
-	ip6tables -A INPUT -p tcp --dport 53 -j ACCEPT
-
-	# Allow ping from any host
-	ip6tables -A INPUT -p ipv6-icmp --icmpv6-type echo-request -j ACCEPT
-
-	# Allow all traffic from specified addresses
-	ip6tables -A INPUT -s 2001:db8::/32 -j ACCEPT
-	ip6tables -A INPUT -s fd00::/8 -j ACCEPT
-
-	ip6tables -A INPUT -s 2001:6a8:2880:a021::12 -j ACCEPT
-	ip6tables -A INPUT -s 2001:6a8:2880:a021::1 -j ACCEPT
-
-	#Drop other traffic
-	ip6tables -A INPUT -j DROP
+	iptables-restore < rules-ipv4
+	ip6tables-restore < rules-ipv6
 
 	echo "Started"
         ;;
     stop)
 	echo "Stopping"
 
-	#Remove current rules
+	iptables -F
 	ip6tables -F
+
+	iptables-restore < no-rules-ipv4
+        ip6tables-restore < no-rules-ipv6
 
 	echo "Stopped"
         ;;
