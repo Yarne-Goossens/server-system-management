@@ -15,6 +15,10 @@ case "$1" in
 	iptables -A INPUT -p tcp --dport 993 -j ACCEPT
 	iptables -A INPUT -p tcp --dport 22345 -j ACCEPT
 
+	# Allow incoming UDP and TCP traffic on port 53
+	iptables -A INPUT -p udp --dport 53 -j ACCEPT
+	iptables -A INPUT -p tcp --dport 53 -j ACCEPT
+
 	echo "Started"
         ;;
     stop)
