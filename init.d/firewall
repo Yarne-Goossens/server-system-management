@@ -2,15 +2,28 @@
 
 case "$1" in
     start)
+	echo "Starting"
+
+	#Allow traffic originating from machine
+	iptables -A OUTPUT -j ACCEPT
+
 	echo "Started"
         ;;
     stop)
+	echo "Stopping"
+
+	#Remove current rules
+	iptables -F
+
 	echo "Stopped"
         ;;
     restart)
 	echo "Restarting"
+
         $0 stop
         $0 start
+
+	echo "Restarted"
         ;;
     *)
         echo "Usage: $0 {start|stop|restart}"
