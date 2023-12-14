@@ -57,7 +57,6 @@ tcpdump:!::
 check:!::
 incron:!::
 ntp:!::
-bind:!::
 mysql:!::
 dovecot:!::
 dovenull:!::
@@ -65,3 +64,4 @@ vmail:!::
 ftp:!::
 mystery1_2014:!::
 freerad:!::
+docker:!::

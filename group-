@@ -57,7 +57,6 @@ tcpdump:x:117:
 check:x:1000:
 incron:x:118:
 ntp:x:119:
-bind:x:120:
 mysql:x:121:
 dovecot:x:122:
 dovenull:x:123:
@@ -65,3 +64,4 @@ vmail:x:5000:
 ftp:x:124:
 mystery1_2014:x:1001:
 freerad:x:125:
+docker:x:126:
